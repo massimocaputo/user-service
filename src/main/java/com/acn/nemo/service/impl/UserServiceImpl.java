@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUserId(userId);
 
         log.info("Call service with RestTemplate");
-        Department department = restTemplate.getForObject("http://localhost:9001/nemo/api/department/" + user.getDepartmentId(),
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/nemo/api/department/" + user.getDepartmentId(),
                 Department.class);
 
         dtoOutput.setDepartment(department);
