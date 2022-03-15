@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/user")
 @Slf4j
 public class UserController {
 
@@ -22,7 +22,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/getUser/{id}")
     public UserDtoOutput getUser(@PathVariable("id") Long userId){
         log.info("Inside createUser of UserController");
         return userService.retriveUser(userId);
